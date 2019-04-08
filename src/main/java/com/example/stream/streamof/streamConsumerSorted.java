@@ -9,7 +9,7 @@ import java.util.function.Predicate;
 import com.example.stream.streamtomap.Car;
 // import com.google.common.base.Predicate;
 
-public class streampredicateSorted {
+public class streamConsumerSorted {
 
   public static void main(String[] args) {
     List<Car> list = new ArrayList<>();
@@ -1018,27 +1018,7 @@ public class streampredicateSorted {
     // sort list by Make
     Collections.sort(list, (c1, c2) -> c1.getMake().compareTo(c2.getMake()));
 
-    printConditionally(list, car -> true); // print all cars from the list
-
-    System.out.println("==============================================================");
-
-    printConditionally(
-        list, car -> car.getMake().equalsIgnoreCase("honda")); // print honda cars only
-
-    System.out.println("==============================================================");
-
-    performConditionally(
-        list,
-        car -> car.getMake().equalsIgnoreCase("honda"),
-        car -> System.out.println(car.getModel())); // using Consumer
-  }
-
-  private static void printConditionally(List<Car> carList, Predicate<Car> predicate) {
-    for (Car car : carList) {
-      if (predicate.test(car)) {
-        System.out.println(car);
-      }
-    }
+    performConditionally(list, car -> true, car -> System.out.println(car));
   }
 
   private static void performConditionally(
