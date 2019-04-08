@@ -3,9 +3,10 @@ package com.example.stream.streamof;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
+import java.util.function.Predicate;
 
 import com.example.stream.streamtomap.Car;
-import com.google.common.base.Predicate;
+// import com.google.common.base.Predicate;
 
 public class streampredicateSorted {
 
